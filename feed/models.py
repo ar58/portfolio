@@ -28,6 +28,7 @@ class Skill(models.Model):
 
 class Work(models.Model):
     work_image = models.ImageField(upload_to='media')
+    web_link = models.CharField(max_length=50,default="https://www.")
 
 class Contact(models.Model):
     name = models.CharField(max_length=160)

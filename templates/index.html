@@ -115,7 +115,7 @@
         <div class="work__container bd-grid">
         {% for work in works  %}
          <div class="work__img">
-            <a href="https://olieapp.com/"target='blank'><img src="{{work.work_image.url}}" alt=""></a>
+            <a href="{{work.web_link}}"target='blank'><img src="{{work.work_image.url}}" alt=""></a>
         </div>
         {% endfor %}
            
@@ -126,7 +126,7 @@
     <section class="contact section" id="contact">
         <h2 class="section-title">Contact</h2>
         
-       {% include 'contact.html' %}
+       <input type="button" value="Message Me"  class="contact__button button">
     </section>
 </main>
 {% endblock body %}
