@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+    <!-- =====BOX ICONS===== -->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Arindam | Welcome to my website</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#home" class="nav__logo">Arindam</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    {% block body %}{% endblock body %}
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+    {% for v in foot  %}
+        <p class="footer__title">{{v.title}}</p>
+        <div class="footer__social">
+            <a href="{{v.instagram}}" class="footer__icon"><i class='bx bxl-instagram'></i></a>
+            <a href="{{v.twitter}}" class="footer__icon"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <p>&#169; {{v.copyright}}</p>
+    {% endfor %}
+    </footer>
+
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+        new TypeIt("#element", {
+            strings: ["Django Developer and","WordPress Developer"],
+            speed: 150,
+            loop: true,
+        
+        }).go(); 
+
+    </script>
+</body>
+
+</html>

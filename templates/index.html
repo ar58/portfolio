@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% load static %}
+
+
+{% block body %}
+<main class="l-main">
+    <!--===== HOME =====-->
+    <section class="home bd-grid" id="home">
+        {% for v in intros  %}
+        <div class="home__data">
+            <h1 class="home__title">{{v.greetings}},<br>{{v.name_intro}} <span class="home__title-color"
+                    id="element">{{v.name}}</span><br></span></h1>
+
+            <a href="#contact" class="button">Contact</a>
+        </div>
+
+        <div class="home__social">
+            <a href="{{v.fb}}" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+            <a href="{{v.linked_in}}" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+            <a href="{{v.github}}" class="home__social-icon"><i class='bx bxl-github'></i></a>
+        </div>
+
+        <div class="home__img">
+            <img class="head_image" src="{{v.head_image.url}}" alt="" srcset="">
+        </div>
+        {% endfor %}
+    </section>
+
+    <!--===== ABOUT =====-->
+    <section class="about section " id="about">
+        <h2 class="section-title">About</h2>
+        {% for v in abouts %}
+        <div class="about__container bd-grid">
+            <div class="about__img">
+                <img src="{{v.about_image.url}}" alt="">
+            </div>
+
+            <div>
+                <h2 class="about__subtitle">Hi,<br><span class="about_color">{{v.title}}</span></h2>
+                <p class="about__text">{{v.text}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!--===== SKILLS =====-->
+    <section class="skills section" id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills__container bd-grid">
+            <div>
+            {% for skill in skills  %}
+                <h2 class="skills__subtitle">{{skill.title}}</h2>
+                <p class="skills__text">{{skill.text}}</p>
+            {% endfor %}
+                
+                <div class="skills__data">
+                    <div class="skills__names">
+                        <i class='bx bxl-html5 skills__icon'></i>
+                        <span class="skills__name">HTML5</span>
+                    </div>
+                    <div class="skills__bar skills__html">
+
+                    </div>
+                    <div>
+                        <span class="skills__percentage">90%</span>
+                    </div>
+                </div>
+                <div class="skills__data">
+                    <div class="skills__names">
+                        <i class='bx bxl-css3 skills__icon'></i>
+                        <span class="skills__name">CSS3</span>
+                    </div>
+                    <div class="skills__bar skills__css">
+
+                    </div>
+                    <div>
+                        <span class="skills__percentage">85%</span>
+                    </div>
+                </div>
+                <div class="skills__data">
+                    <div class="skills__names">
+                        <i class='bx bxl-javascript skills__icon'></i>
+                        <span class="skills__name">JAVASCRIPT</span>
+                    </div>
+                    <div class="skills__bar skills__js">
+
+                    </div>
+                    <div>
+                        <span class="skills__percentage">65%</span>
+                    </div>
+                </div>
+                <div class="skills__data">
+                    <div class="skills__names">
+                        <span class="iconify skills__icon" data-icon="bx:bxl-django" data-inline="false"></span>
+                        <span class="skills__name">Django</span>
+                    </div>
+                    <div class="skills__bar skills__ux">
+
+                    </div>
+                    <div>
+                        <span class="skills__percentage">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--===== WORK =====-->
+    <section class="work section" id="work">
+        <h2 class="section-title">Work</h2>
+
+        <div class="work__container bd-grid">
+        {% for work in works  %}
+         <div class="work__img">
+            <a href="https://olieapp.com/"target='blank'><img src="{{work.work_image.url}}" alt=""></a>
+        </div>
+        {% endfor %}
+           
+        </div>
+    </section>
+
+    <!--===== CONTACT =====-->
+    <section class="contact section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        
+       {% include 'contact.html' %}
+    </section>
+</main>
+{% endblock body %}
