@@ -7,12 +7,12 @@ class ContactForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs.update({'placeholder': 'Your Name'})
+        self.fields['name'].widget.attrs.update({'class': 'your-name'})
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].widget.attrs.update({'placeholder': 'Your Email'})
+        self.fields['email'].widget.attrs.update({'class': 'your-email'})
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['message'].widget.attrs.update({'placeholder': 'Your Message'})
+        self.fields['message'].widget.attrs.update({'class': 'your-message'})

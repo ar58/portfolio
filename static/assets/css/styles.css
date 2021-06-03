@@ -204,6 +204,7 @@ img{
 .home__title-color{
   color: var(--first-color);
 }
+
 .home__social{
   display: flex;
   flex-direction: column;
@@ -347,6 +348,16 @@ img{
   font-size: var(--normal-font-size);
   cursor: pointer;
   margin-left: auto;
+}
+input{
+  padding: 5px;
+  margin-left: 29px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+
+}
+.post__button{
+  align-items: center;
 }
 
 /* ===== FOOTER =====*/

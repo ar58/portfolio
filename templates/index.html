@@ -4,6 +4,13 @@
 
 
 {% block body %}
+   {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
 <main class="l-main">
     <!--===== HOME =====-->
     <section class="home bd-grid" id="home">
@@ -12,7 +19,7 @@
             <h1 class="home__title">{{v.greetings}},<br>{{v.name_intro}} <span class="home__title-color"
                     id="element">{{v.name}}</span><br></span></h1>
 
-            <a href="#contact" class="button">Contact</a>
+            <a href="{% url 'feed:post' %}" class="button">Contact</a>
         </div>
 
         <div class="home__social">
@@ -122,11 +129,6 @@
         </div>
     </section>
 
-    <!--===== CONTACT =====-->
-    <section class="contact section" id="contact">
-        <h2 class="section-title">Contact</h2>
-        
-       <input type="button" value="Message Me"  class="contact__button button">
-    </section>
+    
 </main>
 {% endblock body %}

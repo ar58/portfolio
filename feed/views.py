@@ -1,8 +1,8 @@
-from django.core.checks import messages
 from django.shortcuts import render
 from .models import Footer, Intro,About, Skill, Work, Footer, Contact
 from django.views.generic import TemplateView,FormView
 from .forms import ContactForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -23,6 +23,11 @@ class ContactFormView(FormView):
     template_name = 'contact.html'
     success_url = '/'
 
+    def dispatch(self, request, *args, **kwargs):
+        self.request = request
+        return super().dispatch(request, *args, **kwargs)
+    
+
     def form_valid(self, form):
         
         new_object = Contact.objects.create(
@@ -30,4 +35,6 @@ class ContactFormView(FormView):
             email = form.cleaned_data['email'],
             message =form.cleaned_data['message']
         )
+        messages.add_message(self.request,messages.SUCCESS,'Your Message has been sent. Will reply you soon. Thank you.')
+
         return super().form_valid(form)

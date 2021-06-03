@@ -1,7 +1,51 @@
-<div class="contact__container bd-grid">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" class="contact__button button">Submit</button>
-    </form> 
-</div>
+<!--===== CONTACT =====-->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+    <!-- =====BOX ICONS===== -->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Arindam | Contact Me</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="/" class="nav__logo">Arindam</a>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact__container bd-grid">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="contact__button button">Submit</button>
+                </form>
+            </div>
+        </section>
+    </header>
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>
