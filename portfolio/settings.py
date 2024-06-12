@@ -24,7 +24,7 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 SECRET_KEY = 'xh^-t3h2mb*7)^zrgov&ee(_x5wg3f8_b2e%^79j-*0&fzi%+x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["portfolio-env.eba-3jkmwvw5.us-west-2.elasticbeanstalk.com"]
 
